@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+        <script type="text/template" id="entries-index">
+          <h1>Raffler</h1>
+
+           <div class="alert alert-error fade in" style="display:none">
+              <button class="close"  type="button">&times;</button>
+              <div class="message">test</div>
+          </div>
+          <form id="new_entry">
+             <input type="text" name="name" id="new_entry_name" class="input-large">
+             <input type="submit" value="Add" class="btn btn-success">
+          </form>
+          <table class="table table-striped" id="entries">
+          </table>
+
+          <button id="draw" class="btn btn-large btn-primary" type="button">Draw Winner!</button>
+        </script>
+        <script type="text/template" id="entry">
+              <td><%=entry.get('name')%></td>
+              <td><% if (entry.get('winner')) { %>
+                      <span class="badge badge-success winner">WINNER</span>
+                  <% } %>
+              </td>
+        </script>
+
+        {% block styles %}
+            <link rel="stylesheet" type="text/css" href="{{ asset('/bundles/devtimeraffler/css/bootstrap.css') }}">
+        {% endblock %}
+
+        {% block javascripts %}
+            <script src="{{ asset('/bundles/devtimeraffler/js/jquery.min.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('/bundles/devtimeraffler/js/underscore.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('/bundles/devtimeraffler/js/backbone.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('/bundles/devtimeraffler/js/app.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('/bundles/devtimeraffler/js/models/entry.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('/bundles/devtimeraffler/js/collections/entries.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('/bundles/devtimeraffler/js/views/entries/entry.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('/bundles/devtimeraffler/js/views/entries/entries_index.js') }}" type="text/javascript"></script>
+            <script src="{{ asset('/bundles/devtimeraffler/js/routers/entries_router.js') }}" type="text/javascript"></script>
+
+            <script src="{{ asset('/bundles/devtimeraffler/js/bootstrap.min.js') }}" type="text/javascript"></script>
+
+
+        {% endblock %}
+
+
+    <div class="container-fluid">
+      <div class="row-fluid">
+          <div class="span10">
+              <div id="container" >
+              </div> 
+          </div>
+      </div>
+    </div>
+</html>
