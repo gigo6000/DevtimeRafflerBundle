@@ -17,6 +17,7 @@ class DefaultController extends Controller
     {
         return array();
     }
+
     /**
     *
     * @Route("/api/entries/{id}")
@@ -27,28 +28,22 @@ class DefaultController extends Controller
 
       $params = array();
       $content = $request->getContent();
-      if (!empty($content))
-      {
+      if (!empty($content)) {
           $params = json_decode($content, true); // 2nd param to get as array
       }
 
-       if ($request->getMethod() == 'PUT')
-        {
-          if (empty($params['id']))
-            {
+      if ($request->getMethod() == 'PUT') {
+          if (empty($params['id'])) {
                $errors = array ('errors' => array('id' => array('id can\'t be blank')));
                $response = new Response(json_encode($errors));
                $response->setStatusCode(422);
-               return $response;
 
-            }
+               return $response;
+          }
 
           //TODO: update entries array 
           return new Response();
-
         }
-
-
     }
 
     /**
@@ -67,31 +62,23 @@ class DefaultController extends Controller
 
       $params = array();
       $content = $request->getContent();
-      if (!empty($content))
-      {
+      if (!empty($content)) {
           $params = json_decode($content, true); // 2nd param to get as array
       }
 
-      if ($request->getMethod() == 'GET')
-       {
+      if ($request->getMethod() == 'GET') {
           return new Response(json_encode($entries));
-       }
-      else
-       if ($request->getMethod() == 'POST')
-        {
-          if (empty($params['name']))
-            {
+      } else if ($request->getMethod() == 'POST') {
+          if (empty($params['name'])) {
                $errors = array ('errors' => array('name' => array('name can\'t be blank')));
                $response = new Response(json_encode($errors));
                $response->setStatusCode(422);
+               
                return $response;
-  
-            }
+          }
  
           array_push($entries, array('name' =>$params['name']));
-          return new Response(json_encode($entries));
-         
-        }
-    }
-
+          return new Response(json_encode($entries));      
+     }
+  }
 }
