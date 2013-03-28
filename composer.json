@@ -1,0 +1,29 @@
+{
+    "name": "devtime/raffler-bundle",
+    "type": "symfony-bundle",
+    "description": "Raffler backbonejs bundle example.",
+    "keywords": ["backbonejs", "raffler"],
+    "homepage": "http://devtime.blogspot.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name":"Carlos Mafla",
+            "email":"gigo6000@hotmail.com"
+        },
+        {
+            "name": "Symfony2 Community",
+            "homepage": "https://github.com/gigo6000/DevtimeRafflerBundle/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": ">=2.1.1",
+        "devtime/backbone-bundle": "*"
+    },
+
+   "autoload": {
+        "psr-0": { "Devtime\\Bundle\\RafflerBundle": "" }
+    },
+
+    "target-dir": "Devtime/Bundle/RafflerBundle"
+}
