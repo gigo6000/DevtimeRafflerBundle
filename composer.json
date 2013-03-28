@@ -22,8 +22,8 @@
     },
 
    "autoload": {
-        "psr-0": { "Devtime\\RafflerBundle": "" }
+        "psr-0": { "Devtime\\Bundle\RafflerBundle": "" }
     },
 
-    "target-dir": "Devtime/RafflerBundle"
+    "target-dir": "Devtime/Bundle/RafflerBundle"
 }
