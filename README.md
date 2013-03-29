@@ -67,4 +67,12 @@ devtime_raffler:
     prefix:   /  
 ```
 
-After this point you should be able to go to http://yoursite.local/raffler to see the app.
+### Step 3: Publish the bundle assets 
+
+After this you need to install (publish) your assets to the web dir.
+
+``` bash
+php app/console assets:install
+```
+
+At this point you should be able to see the app: http://yoursite.local/raffler.
