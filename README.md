@@ -61,6 +61,8 @@ public function registerBundles()
 Import the bundle routes by adding the following code to your application’s routing file:
 
 ``` yml
+# app/config/routing.yml
+
 devtime_raffler:
     resource: "@DevtimeRafflerBundle/Controller/"
     type:     annotation
