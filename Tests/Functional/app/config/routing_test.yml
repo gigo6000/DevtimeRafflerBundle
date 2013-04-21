@@ -1,0 +1,4 @@
+devtime_raffler:
+    resource: "@DevtimeRafflerBundle/Controller/"
+    type:     annotation
+    prefix:   /

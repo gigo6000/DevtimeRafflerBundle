@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<phpunit colors="false" bootstrap="Tests/bootstrap.php">
+<phpunit color="true" bootstrap="./Tests/bootstrap.php">
     <testsuites>
         <testsuite name="DevtimeRafflerBundle Test Suite">
             <directory suffix="Test.php">./Tests/</directory>
         </testsuite>
     </testsuites>
+
+    <php>
+      <server name="KERNEL_DIR" value="./Tests/Functional/app" />
+    </php>
 
     <filter>
         <whitelist>
