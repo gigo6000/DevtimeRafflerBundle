@@ -53,12 +53,21 @@ class DefaultController extends Controller
     public function apiEntriesAction()
     {
 
-      $entries = array(
+      $request = $this->get('request');
+      $path = $this->get('kernel')->getRootDir() . '/data/entries.csv';
+
+      $entries = [];
+      if (file_exists($path)) {
+          $csv = array_map('str_getcsv', file($path));
+          foreach($csv as $item) {
+              $entries[] = ['name' => $item[0], 'winner' => false];
+          }    
+      } else { 
+          $entries = array(
                         array('id'=>1,'name' => '@gigo6000', 'winner' => false),
                         array('id'=>2,'name' => '@symfonycol', 'winner' => false)
-                 ); 
-
-      $request = $this->get('request');
+          );   
+      }
 
       $params = array();
       $content = $request->getContent();
